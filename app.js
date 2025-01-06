@@ -10,18 +10,18 @@ const quizArray = [
     answer: 2
   },
   {
-    question: "What is used to declare a constant in JavaScript?",
-    options: ["let", "var", "const"],
-    answer: 2
+    question: "How do you access an element on a webpage in JavaScript using id?",
+    options: ["getElementById", "getElementByClassName", "getElementID"],
+    answer: 0
   },
   {
-    question: "What is used to declare a constant in JavaScript?",
-    options: ["let", "var", "const"],
-    answer: 2
+    question: "Which one is a basic JavaScript data type?",
+    options: ["string", "variable", "procedure"],
+    answer: 0
   },
   {
-    question: "What is used to declare a constant in JavaScript?",
-    options: ["let", "var", "const"],
+    question: "Which one of the following is an HTML Element",
+    options: ["css", "function", "button"],
     answer: 2
   }
 ];
@@ -52,21 +52,12 @@ function runQuiz () {
     } else {
       console.log('Incorrect' + " " + correctAnswer);
       incorrectAnswer ++ ;
-      totalScore -- ;
     }
 
-    console.log(`you have ${correctAnswers} correct answer and ${incorrectAnswer} incorrect answers. Your total score is ${totalScore} out of 5`);
-  }
-    
   
-    // if ( studentAnswer.toString() === quizArray[i].options.toLowerCase() && quizArray[i].options === quizArray.answer) {
-    //   alert('correct');
-    //   correctAnswers ++ ;
-    // } else {
-    //   alert ('Incorrect' + quizArray[i].answer);
-    //   incorrectAnswer --
-    // }
-    // totalScore = correctAnswers + incorrectAnswer;
+  }
+  console.log(`you have ${correctAnswers} correct answer and ${incorrectAnswer} incorrect answers. Your total score is ${totalScore} out of 5`);  
+  
   }
 
 runQuiz();
