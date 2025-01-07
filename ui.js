@@ -55,7 +55,7 @@ function runQuiz () {
     theQuestion.textContent = quizArray[i].question;
     quizzApp.appendChild(theQuestion);
 
-
+      // The option answers
         let option1 = document.createElement('h4');
         option1.textContent = quizArray[i].options[0];
         option1.style.color = "purple";
@@ -72,11 +72,12 @@ function runQuiz () {
         option3.style.color = "purple";
         quizzApp.appendChild(option3);
 
-    
+    // creating an input element for the student input.
     let studentAnswerInput = document.createElement('input');
     studentAnswerInput.type = "text";
     quizzApp.appendChild(studentAnswerInput);
     
+    // Answer Submission.
     let studentAnswersubmitBtn = document.createElement('button');
     studentAnswersubmitBtn.textContent = "submit";
     studentAnswersubmitBtn.style.marginBottom = '40px';
@@ -84,6 +85,7 @@ function runQuiz () {
     quizzApp.appendChild(studentAnswersubmitBtn);
     studentAnswersubmitBtn.addEventListener('click', () => {
 
+      // converted the answer string to lowercase for the comparision
       let studentAnswer = studentAnswerInput.value.toLocaleLowerCase();
       
       console.log(studentAnswer);
@@ -92,7 +94,7 @@ function runQuiz () {
        let correctAnswer = quizArray[i].options[correctAnswerIndex].toString().toLowerCase();
   
   
-  
+      // if statement to verify the answer if it is correct or not
       if (studentAnswer === correctAnswer) {
         console.log('Correct' + " " + correctAnswer);
         studentAnswersubmitBtn.textContent = 'Correct';
@@ -114,15 +116,20 @@ function runQuiz () {
 
         let questionNotes = document.createElement('h5');
         quizzApp.appendChild(questionNotes);
-        questionNotes.textContent = "The Correct Answer is : " + correctAnswer;
+        questionNotes.textContent = "Incorrect. The Correct Answer is : " + correctAnswer;
+        questionNotes.style.color = "red";
 
         incorrectAnswer ++ ;
       }
 
-      console.log(`you have ${correctAnswersCounter} correct answer and ${incorrectAnswer} incorrect answers. Your total score is ${totalScore} out of 5`);  
+      let finalResults = document.createElement('h3');
+      finalResults.textContent = `You have ${correctAnswersCounter} correct answer and ${incorrectAnswer} incorrect answers. Your total score is ${totalScore} out of 5`
+      quizzApp.appendChild(finalResults);
 
     })
+    
    }
+    
   }
 
 runQuiz();
