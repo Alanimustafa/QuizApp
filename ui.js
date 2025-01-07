@@ -30,13 +30,25 @@ const quizArray = [
 // ------------------------- Functions
 
 function runQuiz () {
-  let totalScore = 0;
-  let correctAnswersCounter = 0;
-  let incorrectAnswer = 0;
+  let totalScore = 0;     // To calculate the total score by the end of the quiz.
+  let correctAnswersCounter = 0;  // To calculate the total of the correct answers.
+  let incorrectAnswer = 0;  // To calculate the total of the incorrect answers.
   
+  // DOM has been used to create the HTML elements
+  // the main container 
   let quizzApp = document.querySelector('.quizApp');
+  quizzApp.style.backgroundColor = "rgb(255, 251, 220)";
+  quizzApp.style.display = "block";
+  quizzApp.style.flexWrap = 'wrap';
+  quizzApp.style.padding = '100px'
+  quizzApp.style.margin = '100px'
+  quizzApp.style.width = "60%";
+  quizzApp.style.border = "double orange 8px"
+  quizzApp.style.justfySelf = 'center';
+  quizzApp.style.boxShadow = "black 10px 10px 10px";
 
   
+  // iterate throught the array of the questions.
    for (let i = 0; i < quizArray.length; i++) {
     
     let theQuestion = document.createElement('h3');
@@ -46,15 +58,18 @@ function runQuiz () {
 
         let option1 = document.createElement('h4');
         option1.textContent = quizArray[i].options[0];
+        option1.style.color = "purple";
         quizzApp.appendChild(option1);
         
 
         let option2 = document.createElement('h4');
         option2.textContent = quizArray[i].options[1];
+        option2.style.color = "purple";
         quizzApp.appendChild(option2);
 
         let option3 = document.createElement('h4');
         option3.textContent = quizArray[i].options[2];
+        option3.style.color = "purple";
         quizzApp.appendChild(option3);
 
     
@@ -64,6 +79,8 @@ function runQuiz () {
     
     let studentAnswersubmitBtn = document.createElement('button');
     studentAnswersubmitBtn.textContent = "submit";
+    studentAnswersubmitBtn.style.marginBottom = '40px';
+
     quizzApp.appendChild(studentAnswersubmitBtn);
     studentAnswersubmitBtn.addEventListener('click', () => {
 
@@ -107,10 +124,5 @@ function runQuiz () {
     })
    }
   }
-
-    
-
-  
-  // }
 
 runQuiz();
